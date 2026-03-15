@@ -1,6 +1,6 @@
 cask "pisum-transcript" do
-  version "0.1.19"
-  sha256 arm: "34db44cb9bf0e4f8ee10d74bb8599b462f26b93d2a2df1ccbea57536b7019d3a"
+  version "1.0.0"
+  sha256 arm: "aa7a3efde74b2bf49f789553f9c342c57e7b5aa0aa19a05361c2187910500860"
 
   url "https://github.com/mschnecke/pisum-transcript/releases/download/v#{version}/Pisum.Transcript_#{version}_aarch64.pkg"
 
