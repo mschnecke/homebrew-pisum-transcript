@@ -11,8 +11,10 @@ cask "pisum-langue" do
 
   pkg "Pisum.Langue_#{version}_aarch64.pkg"
 
-  uninstall pkgutil: "com.pisum.langue.app",
-            delete: "/Applications/Pisum Langue.app"
+  # uninstall pkgutil: "com.pisum.langue.app",
+  #           delete: "/Applications/Pisum Langue.app"
+
+  uninstall pkgutil: "com.pisum.langue.app"
 
   zap trash: [
     "~/Library/Application Support/com.pisum.langue",
