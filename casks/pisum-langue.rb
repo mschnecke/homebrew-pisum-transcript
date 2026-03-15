@@ -1,6 +1,6 @@
 cask "pisum-langue" do
-  version "0.1.17"
-  sha256 arm: "3721f875d62ea4b503bc26fe143f0259a9c0c14566e5513eecf5cca9361bb78b"
+  version "0.1.18"
+  sha256 arm: "60f7f0f740ea63e1a6f95bb7d6769c55645ac33b80b0fbfe60a4f5f7b885c9f4"
 
   url "https://github.com/mschnecke/langue/releases/download/v#{version}/Pisum.Langue_#{version}_aarch64.pkg"
 
