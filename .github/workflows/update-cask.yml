@@ -47,7 +47,7 @@ jobs:
           ARM64_SHA="${{ steps.checksums.outputs.arm64_sha256 }}"
 
           sed -i '' "s/version \".*\"/version \"$VERSION\"/" casks/pisum-langue.rb
-          sed -i '' "s/sha256 \".*\"/sha256 \"$ARM64_SHA\"/" casks/pisum-langue.rb
+          sed -i '' "s/arm: \".*\"/arm: \"$ARM64_SHA\"/" casks/pisum-langue.rb
 
       - name: Create Pull Request
         id: create-pr
