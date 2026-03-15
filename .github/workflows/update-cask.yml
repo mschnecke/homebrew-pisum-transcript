@@ -34,7 +34,7 @@ jobs:
           VERSION="${{ steps.version.outputs.version }}"
 
           # Download ARM64 pkg
-          curl -L -o arm64.pkg "https://github.com/mschnecke/langue/releases/download/v${VERSION}/Pisum.Langue_${VERSION}_aarch64.pkg"
+          curl -L -o arm64.pkg "https://github.com/mschnecke/pisum-transcript/releases/download/v${VERSION}/Pisum.Transcript_${VERSION}_aarch64.pkg"
           ARM64_SHA=$(shasum -a 256 arm64.pkg | cut -d ' ' -f 1)
           echo "arm64_sha256=$ARM64_SHA" >> $GITHUB_OUTPUT
 
@@ -46,18 +46,18 @@ jobs:
           VERSION="${{ steps.version.outputs.version }}"
           ARM64_SHA="${{ steps.checksums.outputs.arm64_sha256 }}"
 
-          sed -i '' "s/version \".*\"/version \"$VERSION\"/" casks/pisum-langue.rb
-          sed -i '' "s/arm: \".*\"/arm: \"$ARM64_SHA\"/" casks/pisum-langue.rb
+          sed -i '' "s/version \".*\"/version \"$VERSION\"/" casks/pisum-transcript.rb
+          sed -i '' "s/arm: \".*\"/arm: \"$ARM64_SHA\"/" casks/pisum-transcript.rb
 
       - name: Create Pull Request
         id: create-pr
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Update Pisum Langue cask to v${{ steps.version.outputs.version }}"
-          title: "Update Pisum Langue to v${{ steps.version.outputs.version }}"
+          commit-message: "Update Pisum Transcript cask to v${{ steps.version.outputs.version }}"
+          title: "Update Pisum Transcript to v${{ steps.version.outputs.version }}"
           body: |
-            Automated cask update for Pisum Langue v${{ steps.version.outputs.version }}
+            Automated cask update for Pisum Transcript v${{ steps.version.outputs.version }}
 
             **Package checksums:**
             - ARM64 (.pkg): `${{ steps.checksums.outputs.arm64_sha256 }}`
